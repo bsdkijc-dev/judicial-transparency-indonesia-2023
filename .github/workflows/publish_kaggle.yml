@@ -1,0 +1,47 @@
+name: Publish Mahkamah Agung RI FY 2023 Financial Audit to Kaggle
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/**"
+      - "metadata/**"
+      - "reconciliation/**"
+      - "reports/**"
+      - "dataset-metadata.json"
+  workflow_dispatch:
+
+jobs:
+  validate-and-publish-kaggle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pandas kaggle
+      - name: Validate CSV tables & metadata
+        run: |
+          python - << 'EOF'
+          import os, json, pandas as pd
+          with open("dataset-metadata.json") as f:
+              meta = json.load(f)
+          assert meta["id"] == "judicialcollege/mahkamah-agung-ri-financial-reconciliation-2023"
+          assert meta["licenses"][0]["name"] == "CC-BY-4.0"
+          assert 6 <= len(meta["title"]) <= 50
+          csv_count = sum(
+              1 for r, _, fs in os.walk("data") for fn in fs if fn.endswith(".csv")
+          )
+          assert csv_count == 17, f"Expected 17 data CSVs, found {csv_count}"
+          print(f"Validated {csv_count} data CSVs and dataset-metadata.json.")
+          EOF
+      - name: Push new version to Kaggle
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          kaggle datasets version -p . -m "CI Sync: FY 2023 Audited Financial Reconciliation (${{ github.sha }})" -r zip

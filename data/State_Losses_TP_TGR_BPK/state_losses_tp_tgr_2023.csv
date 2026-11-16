@@ -1,0 +1,9 @@
+Fiscal_Year,Record_Scope,Category_Status,Case_Count,Satker_or_Debtor,Original_Amount_IDR,Recovered_Amount_IDR,Outstanding_Amount_IDR,Source_Page,Notes
+2023,Register_Summary,Sudah Penetapan - TGR Bendahara,4,Consolidated,1114246950.00,1114246950.00,0.00,CaLK F.2 p.152 (PDF1 p.189),Updated post-review: fully settled
+2023,Register_Summary,Sudah Penetapan - TGR Non Bendahara,259,Consolidated,3140339047.00,3127839047.00,12500000.00,CaLK F.2 p.152 (PDF1 p.189),"[REDACTED-INDIVIDUAL-01] (PN Pandeglang) Rp 12,500,000"
+2023,Register_Summary,Proses Penetapan - TGR Bendahara,1,PA Pekalongan ([REDACTED-INDIVIDUAL-02]),22772000.00,22772000.00,0.00,CaLK F.2 p.151-152 (PDF1 p.188-189),Paid in full; awaiting BPK removal
+2023,Register_Summary,Informasi - BPK,441,Consolidated,25105030304.98,25105030304.98,0.00,CaLK F.2 p.152 (PDF1 p.189),Fully settled
+2023,Register_Summary,Informasi - APIP,16,Consolidated,518543961.76,482291735.98,36252225.78,CaLK F.2 p.152 (PDF1 p.189),[REDACTED-INDIVIDUAL-03] (PN Sumbawa Besar)
+2023,Register_Total,All Cumulative Cases (2003-2023),721,Consolidated,29900932263.74,29852180037.96,48752225.78,CaLK F.2 p.152 (PDF1 p.189),99.84% recovery rate
+2023,Active_Receivable_Debtor,Macet (PSBDT / PUPN),1,"[REDACTED-INDIVIDUAL-03] (PN Sumbawa Besar, 417844)",58227646.78,21975421.00,36252226.00,CaLK C.3.1 p.91-92 (PDF1 p.125-126),"Original loss Rp 64,973,646.78; Rp 6,746,000 paid pre-PUPN; 100% provisioned"
+2023,Active_Receivable_Debtor,Macet (PSBDT 2018),1,"[REDACTED-INDIVIDUAL-01] (PN Pandeglang, 098281)",12500000.00,0.00,12500000.00,CaLK C.3.1 p.91 (PDF1 p.125),PSBDT-01/PUPNC.14.01/2018; 100% provisioned

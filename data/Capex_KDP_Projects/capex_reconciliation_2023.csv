@@ -1,0 +1,21 @@
+Fiscal_Year,Reconciliation_Category,Transaction_Code,Description,Amount_IDR,Source_Page,Notes
+2023,KDP_Roll_Forward,000,Saldo Awal TAYL (Proses Migrasi),656303651907.00,CaLK C.2.6 Tabel 52 p.87,Matches FY 2022 Neraca KDP
+2023,KDP_Addition,502,Perolehan / Penambahan KDP,212904661899.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition,503,Pengembangan KDP,1184132987036.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition,504,Koreksi Nilai KDP Bertambah,123026199028.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition,508,Hibah Masuk KDP,744800000.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition,510,Perolehan Lainnya KDP,15269487745.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition,514,Reklasifikasi Masuk KDP,436124000.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Addition_Subtotal,ADD,Jumlah Mutasi Tambah,1536514259708.00,CaLK C.2.6 Tabel 52 p.87,Exact sum of additions
+2023,KDP_Reduction,505,Penghapusan / Penghentian KDP,-5030892988.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Reduction,513,Reklasifikasi Keluar KDP,-436124000.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Reduction,517,Koreksi Pencatatan KDP,-107504661091.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Reduction,564,Koreksi Nilai KDP Berkurang,-9011783372.00,CaLK C.2.6 Tabel 52 p.87,
+2023,KDP_Reduction,599,Reklasifikasi KDP menjadi Barang Jadi,-1155179398091.00,CaLK C.2.6 Tabel 52 p.87,Completed fixed assets
+2023,KDP_Reduction_Subtotal,SUB,Jumlah Mutasi Kurang,-1277162859542.00,CaLK C.2.6 Tabel 52 p.87,Exact sum of reductions
+2023,KDP_Net_Mutation,NET,Jumlah Mutasi,259351400166.00,CaLK C.2.6 Tabel 52 p.87,"1,536,514,259,708 - 1,277,162,859,542"
+2023,KDP_Closing,END,Saldo per 31 Desember 2023,915655052073.00,CaLK C.2.6 Tabel 52 p.87,Exact match to Neraca KDP
+2023,Capex_to_BMN,5311,Belanja Modal Tanah (Bruto),46080606184.00,CaLK B.2.3.1 p.36,Tanah 23.14B + KDP 22.94B + ATL 9M
+2023,Capex_to_BMN,5321,Belanja Modal Peralatan & Mesin (Bruto),329637829438.00,CaLK B.2.3.2 p.37-38,PM 286.01B + KDP 15.41B + ATB 28.02B + other 0.20B
+2023,Capex_to_BMN,5331,Belanja Modal Gedung & Bangunan (Bruto),1421890681000.00,CaLK B.2.3.3 p.38-39,"KDP 1,353.84B + GB 34.08B + RPATA 28.69B + Tanah 10.24B + non-asset -5.96B + other 1.00B"
+2023,Capex_to_BMN,5361,Belanja Modal Lainnya (Bruto),30900419626.00,CaLK B.2.3.5 p.40,ATB 12.36B + PM 11.95B + KDP 4.85B + ATL 1.75B

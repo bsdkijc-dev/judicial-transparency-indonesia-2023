@@ -1,0 +1,6 @@
+Fiscal_Year,Reconciliation_Check,Reported_Value,Cross_Check_Value,Variance,Status,Notes
+2023,Uang Titipan Closing vs Bank + Safe (Consolidated),6289851194839.74,6289851194839.74,0.00,RECONCILED,"Bank 6,278,035,808,295.79 + Safe 11,815,386,543.95 = 6,289,851,194,839.74"
+2023,Uang Titipan Sum of 4 Jurisdictions vs Consolidated,6289851194839.74,6289851194839.74,0.00,RECONCILED,Kepaniteraan + Badilum + Badilag + Badilmiltun exact match
+2023,Uang Titipan March 2023 Consolidated Movement,6274094849712.22,6274094789712.22,60000.00,EXCEPTION_LOGGED,"EXC-2023-009: Reported March closing exceeds calculated roll-forward by Rp 60,000.00"
+2023,Biaya Proses April 2023 Opening vs March 2023 Closing,5274602531.00,5276543331.00,-1940800.00,EXCEPTION_LOGGED,"EXC-2023-010: April opening Rp 5,274,602,531 vs March closing Rp 5,276,543,331 (-Rp 1,940,800)"
+2023,CaLK F.3 RPL Register (900 accts) vs CaLK F.4.1 Bank Balance,6194236444573.00,6278035808295.79,-83799363722.79,EXCEPTION_LOGGED,EXC-2023-006: CaLK F.4.1 p.160 notes bank statement reconciliation differences

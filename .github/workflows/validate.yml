@@ -1,0 +1,40 @@
+name: validate-datasets
+
+on:
+  push:
+    paths: ["datasets/**", "data/**", "metadata.json", "scripts/validate_dataset.py", ".github/workflows/validate.yml"]
+  pull_request:
+
+permissions:
+  contents: read   # validation only — this workflow never publishes
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python --version
+      - name: Validate every package that has a metadata.json
+        run: |
+          set -e
+          mkdir -p reports/validation
+          status=0
+          for meta in $(find . -name metadata.json -not -path "./node_modules/*" -not -path "./.git/*"); do
+            dir=$(dirname "$meta")
+            name=$(echo "$dir" | sed 's|^\./||; s|/|__|g'); [ -z "$name" ] && name=root
+            python scripts/validate_dataset.py "$dir" --report "reports/validation/${name}.md" || status=1
+          done
+          if [ -z "$(find . -name metadata.json -not -path './.git/*')" ] && [ -d data ]; then
+            echo "No metadata.json yet - validating data/ CSVs only"
+            python scripts/validate_dataset.py data --csv-only --report reports/validation/data.md || status=1
+          fi
+          exit $status
+      - name: Upload validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-reports
+          path: reports/validation/

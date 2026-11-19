@@ -1,19 +1,14 @@
 name: Publish Mahkamah Agung RI FY 2023 Financial Audit to Kaggle
 
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - "data/**"
-      - "metadata/**"
-      - "reconciliation/**"
-      - "reports/**"
-      - "dataset-metadata.json"
+  # Publication is approval-controlled: run manually from the Actions tab.
+  # Add required reviewers to the "kaggle-publish" environment in repo Settings.
   workflow_dispatch:
 
 jobs:
   validate-and-publish-kaggle:
     runs-on: ubuntu-latest
+    environment: kaggle-publish
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
